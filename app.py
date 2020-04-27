@@ -71,7 +71,10 @@ Data sourced automatically from [Johns Hopkins University Center for Systems Sci
         value='New Zealand',
         style={'width':'60%'}
     ),
-    html.Div(id='dd-output-graph')
+    html.Div(id='dd-output-graph'),
+    html.A('Code on Github', href='https://github.com/rosatrancoso/dash-covid19-csse'),
+    html.Br(),
+    html.A("Data Source", href='https://github.com/CSSEGISandData/COVID-19'),
 ])
 
 
