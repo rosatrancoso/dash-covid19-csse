@@ -62,13 +62,13 @@ app.layout = html.Div([
     dcc.Markdown('''
 # COVID-19 Data
 
-From [Johns Hopkins University Center for Systems Science and Engineering (JHU-CSSE)](https://github.com/CSSEGISandData/COVID-19)
+Data sourced automatically from [Johns Hopkins University Center for Systems Science and Engineering (JHU-CSSE)](https://github.com/CSSEGISandData/COVID-19)
 '''),
     html.Label('Select country:'),
     dcc.Dropdown(
         id='dd-input-countries',
         options=[{'label': x, 'value': x} for x in confirmed['countries_provinces']],
-        value='Portugal',
+        value='New Zealand',
         style={'width':'60%'}
     ),
     html.Div(id='dd-output-graph')
