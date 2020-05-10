@@ -20,7 +20,7 @@ recovered = pd.read_csv(os.path.join(remote_dir, 'time_series_covid19_recovered_
 
 def add_column_countries_provinces(df):
     fmt = lambda x: '' if x == 'nan' else ' - ' + x
-    aux = df['Country/Region'].astype(str) +           df['Province/State'].astype(str).map(fmt)
+    aux = df['Country/Region'].astype(str) + df['Province/State'].astype(str).map(fmt)
     df['countries_provinces'] = aux
     return df
 
@@ -31,7 +31,8 @@ recovered = add_column_countries_provinces(recovered)
 
 
 def get_country_data(df, pattern, drop_cols=['Country/Region', 'Province/State', 'Lat', 'Long', 'countries_provinces']):
-    ts = df[df['countries_provinces'].str.contains(pattern)]
+    # ts = df[df['countries_provinces'].str.contains(pattern)]
+    ts = df[df['countries_provinces'] == pattern]
     ts = ts.drop(drop_cols, axis=1)
     return ts
 
